@@ -20,7 +20,7 @@
     background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure it takes the full width */
+    width: 5000px; /* Ensure it takes the full width */
     position: relative; /* Use position relative if needed */
     left: 0; /* Align with the left edge of the viewport */
     right: 0; /* Align with the right edge of the viewport */
