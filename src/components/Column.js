@@ -47,12 +47,24 @@ function Column({ title, tickets, users, groupBy }) {
     }
   };
 
+  const groupTicketsByUser = (tickets) => {
+    return tickets.reduce((acc, ticket) => {
+      const userId = ticket.userId;
+      if (!acc[userId]) {
+        acc[userId] = [];
+      }
+      acc[userId].push(ticket);
+      return acc;
+    }, {});
+  };
+
+  const ticketsGroupedByUser = groupTicketsByUser(tickets);
+  
   const { label, icon } = getPriorityLabelAndIcon(highestPriority);
 
   return (
     <div className="column">
       {groupBy === 'status' && (
-
         <div className="header-container">
           <h3>
             <img src={getStatusIcon(title)} alt={`${title} Icon`} />
@@ -63,38 +75,55 @@ function Column({ title, tickets, users, groupBy }) {
             <img src={dotsIcon} alt="Dots Icon" />
           </div>
         </div>
-
-
-
-
       )}
 
       {/* Show priority and card count if grouping by priority */}
       {groupBy === 'priority' && label && (
         <div className="header-container">
           <h3>
-          <img src={icon} alt={label} className="priority-icon" />
-          <span>{label} {tickets.length}</span> {/* Display count here */}
+            <img src={icon} alt={label} className="priority-icon" />
+            <span>{label} {tickets.length}</span>
           </h3>
           <div>
             <img src={addIcon} />
             <img src={dotsIcon} />
           </div>
         </div>
-        
       )}
 
-      <div className={`card-container ${groupBy === 'user' ? 'horizontal-layout' : ''}`}>
+      {/* Render tickets based on grouping */}
+      {groupBy === 'user' ? (
+      <div className="user-columns-container"> {/* Add a new container for user columns */}
+        {Object.keys(ticketsGroupedByUser).map(userId => {
+          const userTickets = ticketsGroupedByUser[userId];
+          const user = users.find(user => user.id === userId);
+          const userName = user ? user.name : 'Unknown User';
+
+          return (
+            <div key={userId} className="user-column">
+              <h4>{userName}</h4>
+              <div className="card-container">
+                {userTickets.map(ticket => (
+                  <Card key={ticket.id} ticket={ticket} userName={userName} userId={userId} groupBy={groupBy} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    ) : (
+      <div className="card-container">
         {tickets.map(ticket => {
           const user = users.find(user => user.id === ticket.userId);
           const userName = user ? user.name : 'Unknown User';
           return (
-            <Card key={ticket.id} ticket={ticket} userName={userName} userId={user.id} />
+            <Card key={ticket.id} ticket={ticket} userName={userName} userId={user.id} groupBy={groupBy} />
           );
         })}
       </div>
-    </div>
-  );
+    )}
+  </div>
+);
 }
 
 export default Column;
