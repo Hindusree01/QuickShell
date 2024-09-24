@@ -1,6 +1,6 @@
 /* Board Container */
 .board-container{
-    background-color: #f7f8fa;
+    background-color: white;
 }
 .board {
     display: flex;
@@ -26,7 +26,28 @@
     right: 0; /* Align with the right edge of the viewport */
     z-index: 1; /* Ensure it stays above other elements */
 }
+.display-dropdown {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* For positioning the dropdown */
+}
 
+/* Dropdown content */
+.dropdown-content {
+    position: absolute; /* Position it absolutely to overlay */
+    top: 100%; /* Align below the dropdown toggle */
+    left: 0; /* Align to the left */
+    background-color: #fff; /* Set background to white */
+    border: 1px solid #ddd; /* Optional border */
+    z-index: 2; /* Ensure it appears above other elements */
+    width: 200px; /* You can set a fixed width if necessary */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    border-radius: 5px;
+    background-color:#f7f8fa;
+}
 
 /* Dropdowns */
 .dropdowns {
