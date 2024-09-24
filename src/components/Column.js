@@ -51,28 +51,37 @@ function Column({ title, tickets, users, groupBy }) {
 
   return (
     <div className="column">
-      {/* Show title based on the grouping */}
       {groupBy === 'status' && (
-        
+
+        <div className="header-container">
           <h3>
             <img src={getStatusIcon(title)} alt={`${title} Icon`} />
             <span>{title} {tickets.length}</span>
-            <img src={addIcon} />
-          <img src={dotsIcon} />
           </h3>
-          
+          <div className="icons">
+            <img src={addIcon} alt="Add Icon" />
+            <img src={dotsIcon} alt="Dots Icon" />
+          </div>
+        </div>
 
-       
+
+
+
       )}
 
       {/* Show priority and card count if grouping by priority */}
       {groupBy === 'priority' && label && (
-        <div className="priority-header">
+        <div className="header-container">
+          <h3>
           <img src={icon} alt={label} className="priority-icon" />
           <span>{label} {tickets.length}</span> {/* Display count here */}
-          <img src={addIcon} />
-          <img src={dotsIcon} />
+          </h3>
+          <div>
+            <img src={addIcon} />
+            <img src={dotsIcon} />
+          </div>
         </div>
+        
       )}
 
       <div className={`card-container ${groupBy === 'user' ? 'horizontal-layout' : ''}`}>
