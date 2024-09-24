@@ -29,14 +29,15 @@ function Card({ ticket, userName, userId, groupBy }) { // Accept userId as a pro
         "usr-4": "#FF33A1", // Ramesh
         "usr-5": "#F0FF33", // Suresh
     };
+    console.log(groupBy)
 
     const userColor = userColors[userId] || "#CCCCCC"; // Fallback color
 
     return (
         <div className="card">
-            <div className="user-initials" style={{ backgroundColor: userColor }}> {/* Circle with color */}
+            {groupBy != "user" && <div className="user-initials" style={{ backgroundColor: userColor }}> {/* Circle with color */}
                 {userInitials}
-            </div>
+            </div>}
             <h2>{ticket.id}</h2>
             <h3>
                {ticket.title}
