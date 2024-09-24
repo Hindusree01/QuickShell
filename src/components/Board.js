@@ -98,7 +98,7 @@ function Board() {
                         {displayDropdownOpen && (
                             <div className="dropdown-content">
                                 <div>
-                                    <label>Grouping</label>
+                                    <label>Grouping--</label>
                                     <select value={groupBy} onChange={handleGroupChange}>
                                         <option value="status">Status</option>
                                         <option value="user">User</option>
@@ -106,7 +106,7 @@ function Board() {
                                     </select>
                                 </div>
                                 <div>
-                                    <label>Ordering</label>
+                                    <label>Ordering--</label>
                                     <select value={orderBy} onChange={handleOrderChange}>
                                         <option value="priority">Priority</option>
                                         <option value="title">Title</option>
