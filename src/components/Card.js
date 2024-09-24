@@ -42,11 +42,11 @@ function Card({ ticket, userName, userId, groupBy }) { // Accept userId as a pro
                 <img src={BacklogIcon} alt={`${ticket.title} Icon`} /> {ticket.title}
             </h3>
             <div className="ticket-details">
-                <div className="priority-wrapper">
+                <div className="icon">
                     <img src={getPriorityIcon(ticket.priority)} alt="Priority Icon" className="priority-icon" />
                 </div>
                 {ticket.tag && (
-                    <div className="tag-wrapper">
+                    <div className="icon">
                         <h3>
                             <img src={BacklogIcon} alt={`${ticket.tag} Icon`} /> {ticket.tag}
                         </h3>
