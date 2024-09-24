@@ -101,7 +101,7 @@ function Column({ title, tickets, users, groupBy }) {
 
           return (
             <div key={userId} className="user-column">
-              <h4>{userName}</h4>
+              <h3>{userName} {userTickets.length}</h3>
               <div className="card-container">
                 {userTickets.map(ticket => (
                   <Card key={ticket.id} ticket={ticket} userName={userName} userId={userId} groupBy={groupBy} />
