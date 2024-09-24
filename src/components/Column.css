@@ -1,0 +1,28 @@
+.priority-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between the priority header and cards */
+}
+
+.priority-icon {
+  width: 40px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 5px; /* Space between icon and label */
+}
+
+
+
+
+.card-container {
+  display: block; /* Default is vertical layout */
+  width: 100%; /* Ensures it takes the full width of the column */
+}
+
+.inline {
+  display: flex; /* Use flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.inline h3 {
+  margin-right: 15px; /* Space between h3 and icons */
+}

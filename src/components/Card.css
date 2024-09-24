@@ -1,0 +1,71 @@
+.card {
+  position: relative; /* Ensure the initials can be positioned absolutely */
+  /* background-color: #fff; Background color of the card */
+  border-radius: 8px; /* Rounded corners */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); Box shadow for depth */
+  padding: 15px; /* Padding inside the card */
+  margin-bottom: 15px; /* Space between cards */
+  display: flex; /* Flexbox for internal layout */
+  flex-direction: column; /* Stack items vertically */
+  width: 300px; /* Set a fixed width for horizontal length */
+  height: 150px; /* Set a fixed height to keep it rectangular */
+}
+
+.ticket-details {
+  display: flex; /* Use Flexbox for alignment */
+  align-items: center; /* Vertically center items */
+}
+
+.priority-wrapper,
+.tag-wrapper {
+  display: inline-flex; /* Keep the inline-flex for alignment */
+  align-items: center; /* Center items vertically */
+  border: 1px solid hsl(0, 0%, 83%); /* Border color */
+  border-radius: 5px; /* Optional */
+  margin-right: 5px; /* Space between the two boxes */
+  padding: 5px; /* Padding inside the wrappers */
+}
+
+.priority-icon {
+  margin-right: 2px; /* Space between icon and box edge */
+}
+
+.user-initials {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 30px; /* Size of the circle */
+  height: 30px; /* Size of the circle */
+  border-radius: 50%; /* Make it circular */
+  /* background-color: #f0f0f0; Light background color */
+  color: #333; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the initials */
+  font-weight: bold; /* Make initials bold */
+  font-size: 14px; /* Font size for initials */
+  border: 1px solid lightgrey; /* Optional border */
+}
+.card {
+  /* background-color: #ffffff; */
+  border-radius: 6px;
+  padding: 15px;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); Soft shadow around the card */
+  transition: box-shadow 0.2s ease;
+  border-left: 5px solid #dfe1e6; /* Neutral border that can change based on priority */
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
