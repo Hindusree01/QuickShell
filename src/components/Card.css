@@ -15,19 +15,26 @@
   display: flex; /* Use Flexbox for alignment */
   align-items: center; /* Vertically center items */
   background-color: white;
+  gap: 10px; /* Adjust the gap as needed */
+  
 }
 
 
-.priority-wrapper,
-.tag-wrapper {
-  display: inline-flex; /* Keep the inline-flex for alignment */
-  align-items: center; /* Center items vertically */
-  border: 1px solid hsl(0, 0%, 83%); /* Border color */
-  border-radius: 5px; /* Optional */
-  margin-right: 5px; /* Space between the two boxes */
-  padding: 5px; /* Padding inside the wrappers */
-  background-color: white;
+.icon {
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0px; /* Space between border and icon */
+  background-color: #fff; /* White background for the box */
+  display: flex; /* Keep the icon centered */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
 }
+
+
+
+
+
+
 
 .priority-icon {
   margin-right: 2px; /* Space between icon and box edge */
@@ -62,6 +69,7 @@
   font-size: 16px;
   /* font-weight: bold; */
   margin: 0 0 5px;
+  background-color: white;
 }
 
 .card p {
