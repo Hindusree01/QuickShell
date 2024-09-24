@@ -14,7 +14,9 @@
 .ticket-details {
   display: flex; /* Use Flexbox for alignment */
   align-items: center; /* Vertically center items */
+  background-color: white;
 }
+
 
 .priority-wrapper,
 .tag-wrapper {
@@ -24,6 +26,7 @@
   border-radius: 5px; /* Optional */
   margin-right: 5px; /* Space between the two boxes */
   padding: 5px; /* Padding inside the wrappers */
+  background-color: white;
 }
 
 .priority-icon {
@@ -52,19 +55,43 @@
   padding: 15px;
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); Soft shadow around the card */
   transition: box-shadow 0.2s ease;
-  border-left: 5px solid #dfe1e6; /* Neutral border that can change based on priority */
+  /* border-left: 5px solid #dfe1e6; Neutral border that can change based on priority */
 }
 
 .card h3 {
   font-size: 16px;
-  font-weight: bold;
-  margin: 0 0 10px;
+  /* font-weight: bold; */
+  margin: 0 0 5px;
 }
 
 .card p {
   font-size: 14px;
-  color: #333;
+  /* color: #333; */
 }
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Spread the content between left and right */
+  align-items: center; /* Align all items vertically in the center */
+  width: 100%; /* Make sure the container takes up the full width */
+  padding: 10px 0; /* Optional: Add some padding if needed */
+}
+
+.header-container h3 {
+  display: flex;
+  align-items: center; /* Align icon and text in the h3 tag */
+  gap: 10px; /* Optional: Add space between the icon and the text */
+  margin: 0; /* Remove default margin from h3 */
+}
+
+.header-container .icons {
+  display: flex;
+  gap: 10px; /* Optional: Add space between the icons */
+}
+
+.header-container .icons img {
+  cursor: pointer; /* Optional: Change cursor to pointer for the icons */
+}
+
 
 
 
