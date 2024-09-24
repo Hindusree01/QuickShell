@@ -39,7 +39,7 @@ function Card({ ticket, userName, userId, groupBy }) { // Accept userId as a pro
             </div>
             <h2>{ticket.id}</h2>
             <h3>
-                <img src={BacklogIcon} alt={`${ticket.title} Icon`} /> {ticket.title}
+               {ticket.title}
             </h3>
             <div className="ticket-details">
                 <div className="icon">
